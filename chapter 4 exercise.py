@@ -23,5 +23,23 @@ else:
 
 # answer 5
 fridge = {"egg": 8, "mushroom": 20, "pepper": 3, "cheese": 2, "tomato": 4, "milk": 13}
-fridge_list = fridge.keys()
-print (fridge_list)
+fridge_list = sorted(fridge.keys())
+food_sought = "apple"
+while len(fridge_list) > 0:
+    current_key = fridge_list.pop()
+    if (current_key == food_sought):
+        print ("Found what I was looking for: %s's number is %d." % (current_key, fridge[current_key]))
+        break
+else:
+    print("%s wasn't found in the fridge." % (food_sought))
+
+# answer 6
+fridge = {"egg": 8, "mushroom": 20, "pepper": 3, "cheese": 2, "tomato": 4, "milk": 13}
+food_sought = "apple"
+try:
+    fridge[food_sought]
+except KeyError:
+	print("%s wasn't found in the fridge." % (food_sought))
+else:
+	print("Found what I was looking for: %s" % (food_sought))
+
